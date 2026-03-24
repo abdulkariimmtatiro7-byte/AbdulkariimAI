@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --neon-blue: #3b82f6;
+    --neon-purple: #a855f7;
+    --neon-green: #22c55e;
+  }
+
+  body {
+    @apply bg-black text-white antialiased;
+    overflow-x: hidden;
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-zinc-800 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-blue-500/50;
+  }
+}
+
+@layer utilities {
+  .text-glow-blue {
+    text-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+  }
+  
+  .text-glow-purple {
+    text-shadow: 0 0 10px rgba(168, 85, 247, 0.5);
+  }
+
+  .custom-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: #27272a transparent;
+  }
+}
+
+/* 3D Rotation Animation for Logo */
+@keyframes rotate3d {
+  0% { transform: rotateY(0deg) rotateX(0deg); }
+  50% { transform: rotateY(180deg) rotateX(10deg); }
+  100% { transform: rotateY(360deg) rotateX(0deg); }
+}
+
+.animate-logo-3d {
+  animation: rotate3d 10s linear infinite;
+  transform-style: preserve-3d;
+}
